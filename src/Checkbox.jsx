@@ -1,13 +1,15 @@
 import React, { PropTypes } from 'react';
 
-export default function TextField(props) {
-  const { value, error, onChange, className, inputClassName, errorClassName, ...rest } = props;
+export default function Checkbox(props) {
+  const { value, onChange, error, className, inputClassName, errorClassName, ...rest } = props;
 
   return (
     <div className={className}>
       <input
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
+        type="checkbox"
+        value="1"
+        checked={!!value}
+        onChange={(e) => onChange(e.target.checked)}
         className={inputClassName}
         {...rest}
       />
@@ -19,16 +21,16 @@ export default function TextField(props) {
   );
 }
 
-TextField.propTypes = {
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  error: PropTypes.string,
+Checkbox.propTypes = {
+  value: PropTypes.bool,
   onChange: PropTypes.func,
+  error: PropTypes.string,
   className: PropTypes.string,
   inputClassName: PropTypes.string,
   errorClassName: PropTypes.string
 };
 
-TextField.defaultProps = {
-  value: '',
+Checkbox.defaultPropTypes = {
+  value: false,
   errorClassName: 'error'
 };
