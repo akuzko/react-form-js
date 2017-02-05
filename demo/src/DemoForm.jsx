@@ -12,16 +12,16 @@ export default class DemoForm extends Form {
   $render($) {
     return (
       <div>
-        <TextField {...$('textField')} placeholder="TextField" label="Label:" />
-        <TextField {...$('textField')} placeholder="TextField">
+        <TextField {...$('textField')} placeholder="TextField" label="Label:" className="input" />
+        <TextField {...$('textField')} placeholder="TextField" className="input">
           <strong>Child Label:</strong>
         </TextField>
 
-        <TextArea {...$('TextArea')} placeholder="TextArea" label="Description:" />
+        <TextArea {...$('TextArea')} placeholder="TextArea" label="Description:" className="input" />
 
-        <Select {...$('select')} options={[1, 2, 3]} includeBlank="Select..." label="Item:" />
+        <Select {...$('select')} options={[1, 2, 3]} includeBlank="Select..." label="Item:" className="input" />
 
-        <Checkbox {...$('checkbox')} label="Checkbox" />
+        <Checkbox {...$('checkbox')} label="Checkbox" className="input" />
 
         <RadioButtonGroup {...$('radio')}>
           <RadioButton value="value1" label="Value 1" />
