@@ -8,10 +8,13 @@ export default class App extends PureComponent {
 
   render() {
     return (
-      <DemoForm
-        attrs={this.state.form}
-        onChange={(form) => this.setState({ form })}
-      />
+      <div>
+        <DemoForm
+          attrs={this.state.form}
+          onChange={(form) => this.setState({ form })}
+        />
+        <pre>{JSON.stringify(this.state.form, null, '  ')}</pre>
+      </div>
     );
   }
 };
