@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 
-export default function TextField(props) {
+export default function TextArea(props) {
   const {
     value,
-    error,
     onChange,
+    error,
     label,
     children,
     className,
@@ -16,13 +16,7 @@ export default function TextField(props) {
   return (
     <label className={className}>
       {children || label}
-      <input
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className={inputClassName}
-        {...rest}
-      />
-
+      <textarea value={value} onChange={(e) => onChange(e.target.value, e)} />
       {error &&
         <div className={errorClassName}>{error}</div>
       }
@@ -30,18 +24,17 @@ export default function TextField(props) {
   );
 }
 
-TextField.propTypes = {
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  error: PropTypes.string,
+TextArea.PropTypes = {
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func,
+  error: PropTypes.string,
   label: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
-  inputClassName: PropTypes.string,
+  inputClassName:PropTypes.string,
   errorClassName: PropTypes.string
 };
 
-TextField.defaultProps = {
-  value: '',
+TextArea.defaultProps = {
   errorClassName: 'error'
 };

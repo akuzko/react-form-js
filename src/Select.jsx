@@ -7,6 +7,7 @@ export default function Select(props) {
     onChange,
     options,
     includeBlank,
+    label,
     className,
     inputClassName,
     errorClassName,
@@ -15,7 +16,8 @@ export default function Select(props) {
   } = props;
 
   return (
-    <div className={className}>
+    <label className={className}>
+      {label}
       <select value={value} onChange={(e) => onChange(e.target.value)} className={inputClassName} {...rest}>
         {children}
         {!children && includeBlank &&
@@ -30,7 +32,7 @@ export default function Select(props) {
       {error &&
         <div className={errorClassName}>{error}</div>
       }
-    </div>
+    </label>
   );
 }
 
@@ -46,6 +48,7 @@ Select.propTypes = {
       label: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     })])).isRequired,
   includeBlank: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  label: PropTypes.string,
   className: PropTypes.string,
   inputClassName: PropTypes.string,
   errorClassName: PropTypes.string
