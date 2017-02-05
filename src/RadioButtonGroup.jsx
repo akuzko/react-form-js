@@ -2,7 +2,16 @@ import React, { PropTypes, Children } from 'react';
 import RadioButton from './RadioButton';
 
 export default function RadioButtonGroup(props) {
-  const { value, onChange, error, className, inputClassName, errorClassName, name, children, ...rest } = props;
+  const {
+    value,
+    onChange,
+    error,
+    className,
+    inputClassName,
+    errorClassName,
+    children,
+    ...rest
+  } = props;
 
   return (
     <div className={className}>
@@ -30,7 +39,8 @@ RadioButtonGroup.propTypes = {
   onChange: PropTypes.func,
   error: PropTypes.string,
   name: PropTypes.string.isRequired,
+  children: PropTypes.node,
   className: PropTypes.string,
   inputClassName: PropTypes.string,
   errorClassName: PropTypes.string
-}
+};

@@ -10,3 +10,8 @@ export default function RadioButton(props) {
     </label>
   );
 }
+
+RadioButton.propTypes = {
+  label: PropTypes.string,
+  labelClassName: PropTypes.string
+};

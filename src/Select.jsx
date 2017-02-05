@@ -49,6 +49,7 @@ Select.propTypes = {
     })])).isRequired,
   includeBlank: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   label: PropTypes.string,
+  children: PropTypes.node,
   className: PropTypes.string,
   inputClassName: PropTypes.string,
   errorClassName: PropTypes.string

@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
 export default function TextArea(props) {
   const {
@@ -16,7 +16,12 @@ export default function TextArea(props) {
   return (
     <label className={className}>
       {children || label}
-      <textarea value={value} onChange={(e) => onChange(e.target.value, e)} />
+      <textarea
+        value={value}
+        onChange={(e) => onChange(e.target.value, e)}
+        className={inputClassName}
+        {...rest}
+      />
       {error &&
         <div className={errorClassName}>{error}</div>
       }
@@ -24,7 +29,7 @@ export default function TextArea(props) {
   );
 }
 
-TextArea.PropTypes = {
+TextArea.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func,
   error: PropTypes.string,
