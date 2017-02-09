@@ -1,7 +1,17 @@
 import React, { PropTypes } from 'react';
 
 export default function Checkbox(props) {
-  const { value, onChange, error, label, className, inputClassName, errorClassName, ...rest } = props;
+  const {
+    value,
+    onChange,
+    error,
+    label,
+    className,
+    inputClassName,
+    errorClassName,
+    children,
+    ...rest
+  } = props;
 
   return (
     <label className={className}>
@@ -9,12 +19,12 @@ export default function Checkbox(props) {
         type="checkbox"
         value="1"
         checked={!!value}
-        onChange={(e) => onChange(e.target.checked)}
+        onChange={(e) => onChange(e.target.checked, e)}
         className={inputClassName}
         {...rest}
       />
 
-      {label}
+      {children || label}
 
       {error &&
         <div className={errorClassName}>{error}</div>
@@ -30,10 +40,13 @@ Checkbox.propTypes = {
   label: PropTypes.string,
   className: PropTypes.string,
   inputClassName: PropTypes.string,
-  errorClassName: PropTypes.string
+  errorClassName: PropTypes.string,
+  children: PropTypes.node
 };
 
-Checkbox.defaultPropTypes = {
+Checkbox.defaultProps = {
   value: false,
+  className: '',
+  inputClassName: '',
   errorClassName: 'error'
 };

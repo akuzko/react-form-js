@@ -6,7 +6,9 @@ export default function RadioButtonGroup(props) {
     value,
     onChange,
     error,
+    labelPosition,
     className,
+    radioClassName,
     inputClassName,
     errorClassName,
     children,
@@ -21,9 +23,11 @@ export default function RadioButtonGroup(props) {
         return element.type === RadioButton ?
           React.cloneElement(element, {
             ...rest,
-            className: inputClassName,
+            className: element.props.className || radioClassName,
+            inputClassName: element.props.inputClassName || inputClassName,
+            labelPosition: element.props.labelPosition || labelPosition,
             checked: radioValue == value,
-            onClick: function(e) { return onChange(radioValue, e); }
+            onChange: function(e) { return onChange(radioValue, e); }
           }) :
           element;
       })}
@@ -39,8 +43,18 @@ RadioButtonGroup.propTypes = {
   onChange: PropTypes.func,
   error: PropTypes.string,
   name: PropTypes.string.isRequired,
+  labelPosition: PropTypes.oneOf(['before', 'after']),
   children: PropTypes.node,
   className: PropTypes.string,
+  radioClassName: PropTypes.string,
   inputClassName: PropTypes.string,
   errorClassName: PropTypes.string
+};
+
+RadioButtonGroup.defaultProps = {
+  labelPosition: 'after',
+  className: '',
+  radioClassName: '',
+  inputClassName: '',
+  errorClassName: 'error'
 };

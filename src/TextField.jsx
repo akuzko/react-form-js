@@ -3,8 +3,8 @@ import React, { PropTypes } from 'react';
 export default function TextField(props) {
   const {
     value,
-    error,
     onChange,
+    error,
     label,
     children,
     className,
@@ -18,11 +18,10 @@ export default function TextField(props) {
       {children || label}
       <input
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e) => onChange(e.target.value, e)}
         className={inputClassName}
         {...rest}
       />
-
       {error &&
         <div className={errorClassName}>{error}</div>
       }
@@ -31,9 +30,9 @@ export default function TextField(props) {
 }
 
 TextField.propTypes = {
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  error: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func,
+  error: PropTypes.string,
   label: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
@@ -43,5 +42,7 @@ TextField.propTypes = {
 
 TextField.defaultProps = {
   value: '',
+  className: '',
+  inputClassName: '',
   errorClassName: 'error'
 };

@@ -36,10 +36,13 @@ TextArea.propTypes = {
   label: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
-  inputClassName:PropTypes.string,
+  inputClassName: PropTypes.string,
   errorClassName: PropTypes.string
 };
 
 TextArea.defaultProps = {
+  value: '',
+  className: '',
+  inputClassName: '',
   errorClassName: 'error'
 };

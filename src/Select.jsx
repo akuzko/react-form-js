@@ -18,7 +18,7 @@ export default function Select(props) {
   return (
     <label className={className}>
       {label}
-      <select value={value} onChange={(e) => onChange(e.target.value)} className={inputClassName} {...rest}>
+      <select value={value} onChange={(e) => onChange(e.target.value, e)} className={inputClassName} {...rest}>
         {children}
         {!children && includeBlank &&
           <option value="">{typeof includeBlank === 'string' ? includeBlank : 'None'}</option>
@@ -38,8 +38,8 @@ export default function Select(props) {
 
 Select.propTypes = {
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  error: PropTypes.string,
   onChange: PropTypes.func,
+  error: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string,
@@ -48,7 +48,7 @@ Select.propTypes = {
       label: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     })])).isRequired,
   includeBlank: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-  label: PropTypes.string,
+  label: PropTypes.node,
   children: PropTypes.node,
   className: PropTypes.string,
   inputClassName: PropTypes.string,
@@ -57,6 +57,9 @@ Select.propTypes = {
 
 Select.defaultProps = {
   value: '',
+  options: [],
   includeBlank: false,
+  className: '',
+  inputClassName: '',
   errorClassName: 'error'
 };
