@@ -10,9 +10,9 @@ describe('<TextArea />', function() {
       expect(wrapper.find('label').hasClass('foo')).toBe(true);
     });
 
-    it('renders children as label', function() {
-      const wrapper = shallow(<TextArea><strong>First name:</strong></TextArea>);
-      expect(wrapper.contains(<strong>First name:</strong>)).toBe(true);
+    it('renders label content', function() {
+      const wrapper = shallow(<TextArea label={<strong>Description:</strong>} />);
+      expect(wrapper.contains(<strong>Description:</strong>)).toBe(true);
     });
   });
 

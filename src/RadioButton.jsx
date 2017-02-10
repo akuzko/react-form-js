@@ -16,7 +16,7 @@ export default function RadioButton(props) {
 }
 
 RadioButton.propTypes = {
-  label: PropTypes.string,
+  label: PropTypes.node,
   labelPosition: PropTypes.oneOf(['before', 'after']),
   className: PropTypes.string,
   inputClassName: PropTypes.string,

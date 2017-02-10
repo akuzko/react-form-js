@@ -6,7 +6,7 @@ export default function TextArea(props) {
     onChange,
     error,
     label,
-    children,
+    labelPosition,
     className,
     inputClassName,
     errorClassName,
@@ -15,13 +15,17 @@ export default function TextArea(props) {
 
   return (
     <label className={className}>
-      {children || label}
+      {labelPosition === 'before' && label}
+
       <textarea
         value={value}
         onChange={(e) => onChange(e.target.value, e)}
         className={inputClassName}
         {...rest}
       />
+
+      {labelPosition === 'after' && label}
+
       {error &&
         <div className={errorClassName}>{error}</div>
       }
@@ -33,8 +37,8 @@ TextArea.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func,
   error: PropTypes.string,
-  label: PropTypes.string,
-  children: PropTypes.node,
+  label: PropTypes.node,
+  labelPosition: PropTypes.oneOf(['before', 'after']),
   className: PropTypes.string,
   inputClassName: PropTypes.string,
   errorClassName: PropTypes.string
@@ -42,6 +46,7 @@ TextArea.propTypes = {
 
 TextArea.defaultProps = {
   value: '',
+  labelPosition: 'before',
   className: '',
   inputClassName: '',
   errorClassName: 'error'

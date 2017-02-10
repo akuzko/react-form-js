@@ -8,6 +8,7 @@ export default function Select(props) {
     options,
     includeBlank,
     label,
+    labelPosition,
     className,
     inputClassName,
     errorClassName,
@@ -17,7 +18,8 @@ export default function Select(props) {
 
   return (
     <label className={className}>
-      {label}
+      {labelPosition === 'before' && label}
+
       <select value={value} onChange={(e) => onChange(e.target.value, e)} className={inputClassName} {...rest}>
         {children}
         {!children && includeBlank &&
@@ -29,6 +31,9 @@ export default function Select(props) {
           return <option key={i} value={value}>{label}</option>;
         })}
       </select>
+
+      {labelPosition === 'after' && label}
+
       {error &&
         <div className={errorClassName}>{error}</div>
       }
@@ -49,6 +54,7 @@ Select.propTypes = {
     })])).isRequired,
   includeBlank: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   label: PropTypes.node,
+  labelPosition: PropTypes.oneOf(['before', 'after']),
   children: PropTypes.node,
   className: PropTypes.string,
   inputClassName: PropTypes.string,
@@ -59,6 +65,7 @@ Select.defaultProps = {
   value: '',
   options: [],
   includeBlank: false,
+  labelPosition: 'before',
   className: '',
   inputClassName: '',
   errorClassName: 'error'

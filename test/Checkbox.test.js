@@ -14,11 +14,6 @@ describe('<Checkbox />', function() {
       const wrapper = shallow(<Checkbox label="Approve" />);
       expect(wrapper.contains('Approve')).toBe(true);
     });
-
-    it('renders children as label', function() {
-      const wrapper = shallow(<Checkbox><strong>Approve</strong></Checkbox>)
-      expect(wrapper.contains(<strong>Approve</strong>)).toBe(true);
-    });
   });
 
   describe('Checkbox', function() {

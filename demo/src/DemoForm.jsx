@@ -12,10 +12,7 @@ export default class DemoForm extends Form {
   $render($) {
     return (
       <div>
-        <TextField {...$('textField1')} placeholder="TextField1" label="Label:" className="input" />
-        <TextField {...$('textField2')} placeholder="TextField2" className="input">
-          <strong>Child Label:</strong>
-        </TextField>
+        <TextField {...$('textField')} placeholder="TextField" label="Label:" className="input" />
 
         <TextArea {...$('TextArea')} placeholder="TextArea" label="Description:" className="input" />
 

@@ -6,15 +6,17 @@ export default function Checkbox(props) {
     onChange,
     error,
     label,
+    labelPosition,
     className,
     inputClassName,
     errorClassName,
-    children,
     ...rest
   } = props;
 
   return (
     <label className={className}>
+      {labelPosition === 'before' && label}
+
       <input
         type="checkbox"
         value="1"
@@ -24,7 +26,7 @@ export default function Checkbox(props) {
         {...rest}
       />
 
-      {children || label}
+      {labelPosition === 'after' && label}
 
       {error &&
         <div className={errorClassName}>{error}</div>
@@ -37,7 +39,8 @@ Checkbox.propTypes = {
   value: PropTypes.bool,
   onChange: PropTypes.func,
   error: PropTypes.string,
-  label: PropTypes.string,
+  label: PropTypes.node,
+  labelPosition: PropTypes.oneOf(['before', 'after']),
   className: PropTypes.string,
   inputClassName: PropTypes.string,
   errorClassName: PropTypes.string,
@@ -46,6 +49,7 @@ Checkbox.propTypes = {
 
 Checkbox.defaultProps = {
   value: false,
+  labelPosition: 'after',
   className: '',
   inputClassName: '',
   errorClassName: 'error'

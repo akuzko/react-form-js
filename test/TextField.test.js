@@ -10,8 +10,8 @@ describe('<TextField />', function() {
       expect(wrapper.find('label').hasClass('foo')).toBe(true);
     });
 
-    it('renders children as label', function() {
-      const wrapper = shallow(<TextField><strong>First name:</strong></TextField>);
+    it('renders label content', function() {
+      const wrapper = shallow(<TextField label={<strong>First name:</strong>} />);
       expect(wrapper.contains(<strong>First name:</strong>)).toBe(true);
     });
   });
