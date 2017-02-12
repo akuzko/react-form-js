@@ -11,20 +11,57 @@ import Form, {
 export default class DemoForm extends Form {
   $render($) {
     return (
-      <div>
-        <TextField {...$('textField')} placeholder="TextField" label="Label:" className="input" />
+      <div className="container">
+        <div className="paper p-20 mt-20 mb-20">
+          <div className="horizontal-container">
+            <div className="flex-item three mr-20">
 
-        <TextArea {...$('TextArea')} placeholder="TextArea" label="Description:" className="input" />
+              <div className="horizontal-container mb-20">
+                <div className="flex-item two mr-20"></div>
+                <div className="flex-item">
+                  <TextField {...$('textField')} placeholder="TextField" label="Label:" className="block mb-10" inputClassName="form-control" />
+                </div>
+              </div>
 
-        <Select {...$('select')} options={[1, 2, 3]} includeBlank="Select..." label="Item:" className="input" />
+              <div className="horizontal-container mb-20">
+                <div className="flex-item two mr-20"></div>
+                <div className="flex-item">
+                  <TextArea {...$('TextArea')} placeholder="TextArea" label="Description:" className="block" inputClassName="form-control" />
+                </div>
+              </div>
 
-        <Checkbox {...$('checkbox')} label="Checkbox" className="input" />
 
-        <RadioButtonGroup {...$('radio')}>
-          <RadioButton value="value1" label="Value 1" />
-          <RadioButton value="value2" label="Value 2" />
-          <RadioButton value="value3" label="Value 3" />
-        </RadioButtonGroup>
+              <div className="horizontal-container mb-20">
+                <div className="flex-item two mr-20"></div>
+                <div className="flex-item">
+                  <Select {...$('select')} options={[1, 2, 3]} includeBlank="Select..." label="Item:" className="block" inputClassName="form-control" />
+                </div>
+              </div>
+
+              <div className="horizontal-container mb-20">
+                <div className="flex-item two mr-20"></div>
+                <div className="flex-item">
+                  <Checkbox {...$('checkbox')} label={<span>Checkbox</span>} className="block checkbox" />
+                </div>
+              </div>
+
+              <div className="horizontal-container mb-20">
+                <div className="flex-item two mr-20"></div>
+                <div className="flex-item">
+                  <RadioButtonGroup className="horizontal-container" {...$('radio')}>
+                    <RadioButton className="radio mr-20" value="value1" label={<span>Value 1</span>} />
+                    <RadioButton className="radio mr-20" value="value2" label={<span>Value 2</span>} />
+                    <RadioButton className="radio" value="value3" label={<span>Value 3</span>} />
+                  </RadioButtonGroup>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex-item">
+
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
