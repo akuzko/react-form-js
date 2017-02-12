@@ -1,7 +1,7 @@
 {
   "name": "react-form-js",
   "version": "1.0.0",
-  "description": "Native HTML input bindings for react-form-base",
+  "description": "HTML input bindings for react-form-base",
   "main": "./lib/index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
