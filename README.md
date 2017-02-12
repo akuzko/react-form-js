@@ -91,6 +91,11 @@ Wraps `<input type="text" />` HTML tag.
       <td><code>PropTypes.string</code>Defaults to <code>'error'</code></td>
       <td>className for internal error element (div), which is rendered if error is present.</td>
     </tr>
+    <tr>
+      <td><code>...rest</code></td>
+      <td></td>
+      <td>the rest of props is delegated to nested <code>input[type="text"]</code> element.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -129,6 +134,11 @@ Wraps `<textarea />` HTML tag.
       <td>errorClassname</td>
       <td><code>PropTypes.string</code>Defaults to <code>'error'</code></td>
       <td>className for internal error element (div), which is rendered if error is present.</td>
+    </tr>
+    <tr>
+      <td><code>...rest</code></td>
+      <td></td>
+      <td>the rest of props is delegated to nested <code>textarea</code> element.</td>
     </tr>
   </tbody>
 </table>
@@ -209,6 +219,11 @@ Wraps `<select />` HTML tag.
       <td><code>PropTypes.string</code>Defaults to <code>'error'</code></td>
       <td>className for internal error element (div), which is rendered if error is present.</td>
     </tr>
+    <tr>
+      <td><code>...rest</code></td>
+      <td></td>
+      <td>the rest of props is delegated to nested <code>select</code> element.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -247,6 +262,11 @@ Wraps `<input type="checkbox" />` HTML tag.
       <td>errorClassname</td>
       <td><code>PropTypes.string</code>Defaults to <code>'error'</code></td>
       <td>className for internal error element (div), which is rendered if error is present.</td>
+    </tr>
+    <tr>
+      <td><code>...rest</code></td>
+      <td></td>
+      <td>the rest of props is delegated to nested <code>input[type="checkbox"]</code> element.</td>
     </tr>
   </tbody>
 </table>
@@ -306,6 +326,11 @@ as **direct children**, and supplied `name` property to them.
         All other (non-radio-button elements) are rendered untouched.
       </td>
     </tr>
+    <tr>
+      <td><code>...rest</code></td>
+      <td></td>
+      <td>the rest of props is delegated to each of nested <code>RadioButton</code> component (and only to them).</td>
+    </tr>
   </tbody>
 </table>
 
@@ -339,6 +364,11 @@ Wraps `<input type="radio" />` HTML tag.
       <td>inputClassName</td>
       <td><code>PropTypes.string</code></td>
       <td>className for internal input element.</td>
+    </tr>
+    <tr>
+      <td><code>...rest</code></td>
+      <td></td>
+      <td>the rest of props is delegated to nested <code>input[type="radio"]</code> element.</td>
     </tr>
   </tbody>
 </table>
