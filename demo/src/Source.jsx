@@ -11,11 +11,9 @@ export default class Source extends PureComponent {
   }
 
   render() {
-    const { title, code } = this.props;
-
     return (
       <pre className="language-javascript" ref="prism">
-        <code className="language-javascript">{dedent(code)}</code>
+        <code className="language-javascript">{dedent(this.props.code)}</code>
       </pre>
     );
   }

@@ -245,7 +245,7 @@ Wraps `<input type="checkbox" />` HTML tag.
     </tr>
     <tr>
       <td>labelPosition</td>
-      <td><code>PropTypes.oneOf(['before', 'after'])</code><br/>Defaults to <code>'before'</code></td>
+      <td><code>PropTypes.oneOf(['before', 'after'])</code><br/>Defaults to <code>'after'</code></td>
       <td>Specifies whether label should be rendered before or after input element.</td>
     </tr>
     <tr>

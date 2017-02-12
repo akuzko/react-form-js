@@ -12,10 +12,6 @@
   min-width: 0;
 
   &.two {
-  	flex: 2;
-  }
-
-  &.three {
-    flex: 3;
+    flex: 2;
   }
 }

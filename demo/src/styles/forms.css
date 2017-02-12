@@ -25,7 +25,7 @@ textarea {
     top: 0;
     left: 0;
     opacity: 0;
-    
+
     + span:before {
       content: '';
       position: absolute;
@@ -39,7 +39,6 @@ textarea {
     }
 
     &:checked + span {
-
       &:before {
         background: #3a539b;
         border-color: #3a539b;
