@@ -28,7 +28,7 @@ export default class DemoForm extends Form {
               visit <a href="https://akuzko.github.io/react-form-base/">react-form-base</a>.
             </div>
             <div className="mb-20">
-              Each input component bellow is rendered within a single form. Also,
+              Each input component bellow is rendered within a single common form. Also,
               for each of those inputs there is a "Validate" button that will
               invalidate corresponding input. Note that since form
               has <code>validateOnChange</code> property enabled (which is default
