@@ -43,8 +43,7 @@ Checkbox.propTypes = {
   labelPosition: PropTypes.oneOf(['before', 'after']),
   className: PropTypes.string,
   inputClassName: PropTypes.string,
-  errorClassName: PropTypes.string,
-  children: PropTypes.node
+  errorClassName: PropTypes.string
 };
 
 Checkbox.defaultProps = {
