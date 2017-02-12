@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #ececec;
+  background-color: #f8f8f8;
   color: rgba(0,0,0,.8);
   font-family: 'Lato', sans-serif;
   font-size: 16px;
@@ -16,6 +16,10 @@ body {
   padding: 0 15px;
 }
 
+.relative {
+  position: relative;
+}
+
 .paper {
   background: #fff;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
@@ -23,4 +27,14 @@ body {
 
 .block {
 	display: block;
+}
+
+.attrs {
+  width: 360px;
+
+  .attrs-content {
+    position: fixed;
+    width: 360px;
+    overflow-y: auto;
+  }
 }
