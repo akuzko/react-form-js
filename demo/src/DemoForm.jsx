@@ -20,6 +20,26 @@ export default class DemoForm extends Form {
         <div className="mt-20 mb-20">
           <div className="horizontal-container">
             <div className="flex-item mr-20">
+              <div className="paper p-20 mb-20">
+                <h1>React Form JS Demo</h1>
+                <div className="mb-20">
+                  This small demo app shows a basic usage examples of components provided
+                  by <a href="https://github.com/akuzko/react-form-js">react-form-js</a>.
+                  For a showcase of features of form itself, please
+                  visit <a href="https://akuzko.github.io/react-form-base/">react-form-base</a>.
+                </div>
+                <div className="mb-20">
+                  Each input component bellow is rendered within a single form. Also,
+                  for each of those inputs there is a "Validate" button that will
+                  invalidate corresponding input. Note that since form
+                  has <code>validateOnChange</code> property enabled (which is default
+                  behavior), each error will be cleared on input change.
+                </div>
+                <div>
+                  To the rightmost section of the page form renders its attributes
+                  (<code>this.props.attrs</code>) and errors (<code>this.state.errors</code>)
+                </div>
+              </div>
               <div className="paper horizontal-container center p-20 mb-20">
                 <div className="flex-item two mr-20">
                   <Source code={`
@@ -27,7 +47,7 @@ export default class DemoForm extends Form {
                       {...$('fullName')}
                       placeholder="Full Name"
                       label="TextField"
-                      className="block mb-10"
+                      className="block mb-20"
                       inputClassName="form-control"
                     />
                   `} />
@@ -45,7 +65,7 @@ export default class DemoForm extends Form {
                       {...$('description')}
                       placeholder="Description"
                       label="TextArea"
-                      className="block"
+                      className="block mb-20"
                       inputClassName="form-control"
                     />
                   `} />
@@ -65,7 +85,7 @@ export default class DemoForm extends Form {
                       options={[1, 2, 3]}
                       includeBlank="Position..."
                       label="Select"
-                      className="block"
+                      className="block mb-20"
                       inputClassName="form-control"
                     />
                   `} />
@@ -79,7 +99,7 @@ export default class DemoForm extends Form {
               <div className="paper horizontal-container center p-20 mb-20">
                 <div className="flex-item two mr-20">
                   <Source code={`
-                    <Checkbox {...$('checkbox')} label={<span>Checkbox</span>} className="block checkbox" />
+                    <Checkbox {...$('checkbox')} label={<span>Checkbox</span>} className="block checkbox mb-20" />
                   `} />
                 </div>
                 <div className="flex-item">
@@ -91,8 +111,8 @@ export default class DemoForm extends Form {
               <div className="paper horizontal-container center p-20">
                 <div className="flex-item two mr-20">
                   <Source code={`
-                    <RadioButtonGroup className="horizontal-container" {...$('radio')}>
-                      <div>Favorite Color</div>
+                    <div className="mb-10">Favorite Color</div>
+                    <RadioButtonGroup className="horizontal-container relative radio-group mb-20" {...$('radio')}>
                       <RadioButton className="radio mr-20" value="red" label={<span>Red</span>} />
                       <RadioButton className="radio mr-20" value="green" label={<span>Green</span>} />
                       <RadioButton className="radio" value="blue" label={<span>Blue</span>} />

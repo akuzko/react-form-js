@@ -94,7 +94,7 @@ Wraps `<input type="text" />` HTML tag.
     <tr>
       <td><code>...rest</code></td>
       <td></td>
-      <td>the rest of props is delegated to nested <code>input[type="text"]</code> element.</td>
+      <td>the rest of props are delegated to the nested <code>input[type="text"]</code> element.</td>
     </tr>
   </tbody>
 </table>
@@ -138,7 +138,7 @@ Wraps `<textarea />` HTML tag.
     <tr>
       <td><code>...rest</code></td>
       <td></td>
-      <td>the rest of props is delegated to nested <code>textarea</code> element.</td>
+      <td>the rest of props are delegated to the nested <code>textarea</code> element.</td>
     </tr>
   </tbody>
 </table>
@@ -222,7 +222,7 @@ Wraps `<select />` HTML tag.
     <tr>
       <td><code>...rest</code></td>
       <td></td>
-      <td>the rest of props is delegated to nested <code>select</code> element.</td>
+      <td>the rest of props are delegated to the nested <code>select</code> element.</td>
     </tr>
   </tbody>
 </table>
@@ -266,7 +266,7 @@ Wraps `<input type="checkbox" />` HTML tag.
     <tr>
       <td><code>...rest</code></td>
       <td></td>
-      <td>the rest of props is delegated to nested <code>input[type="checkbox"]</code> element.</td>
+      <td>the rest of props are delegated to the nested <code>input[type="checkbox"]</code> element.</td>
     </tr>
   </tbody>
 </table>
@@ -368,7 +368,7 @@ Wraps `<input type="radio" />` HTML tag.
     <tr>
       <td><code>...rest</code></td>
       <td></td>
-      <td>the rest of props is delegated to nested <code>input[type="radio"]</code> element.</td>
+      <td>the rest of props are delegated to the nested <code>input[type="radio"]</code> element.</td>
     </tr>
   </tbody>
 </table>
