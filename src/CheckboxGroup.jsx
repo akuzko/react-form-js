@@ -1,14 +1,14 @@
 import React, { PropTypes, Children } from 'react';
-import RadioButton from './RadioButton';
+import Checkbox from './Checkbox';
 
-export default function RadioButtonGroup(props) {
+export default function CheckboxGroup(props) {
   const {
-    value,
+    value = [],
     onChange,
     error,
     labelPosition,
     className,
-    radioClassName,
+    checkboxClassName,
     inputClassName,
     errorClassName,
     children,
@@ -18,16 +18,18 @@ export default function RadioButtonGroup(props) {
   return (
     <div className={className}>
       {Children.map(children, (element) => {
-        const radioValue = element.props.value;
+        const inputValue = element.props.value;
 
-        return element.type === RadioButton ?
+        return element.type === Checkbox ?
           React.cloneElement(element, {
             ...rest,
-            className: element.props.className || radioClassName,
+            className: element.props.className || checkboxClassName,
             inputClassName: element.props.inputClassName || inputClassName,
             labelPosition: element.props.labelPosition || labelPosition,
-            checked: radioValue == value,
-            onChange: function(e) { return onChange(radioValue, e); }
+            value: value.includes(inputValue),
+            onChange: function(checked, e) {
+              return onChange(checked ? [...value, inputValue] : value.filter(v => v !== inputValue), e);
+            }
           }) :
           element;
       })}
@@ -38,20 +40,21 @@ export default function RadioButtonGroup(props) {
   );
 }
 
-RadioButtonGroup.propTypes = {
-  value: PropTypes.string,
+CheckboxGroup.propTypes = {
+  value: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  ),
   onChange: PropTypes.func,
   error: PropTypes.string,
-  name: PropTypes.string.isRequired,
   labelPosition: PropTypes.oneOf(['before', 'after']),
   children: PropTypes.node,
   className: PropTypes.string,
-  radioClassName: PropTypes.string,
+  checkboxClassName: PropTypes.string,
   inputClassName: PropTypes.string,
   errorClassName: PropTypes.string
 };
 
-RadioButtonGroup.defaultProps = {
+CheckboxGroup.defaultProps = {
   labelPosition: 'after',
   errorClassName: 'error'
 };

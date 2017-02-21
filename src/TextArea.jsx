@@ -47,7 +47,5 @@ TextArea.propTypes = {
 TextArea.defaultProps = {
   value: '',
   labelPosition: 'before',
-  className: '',
-  inputClassName: '',
   errorClassName: 'error'
 };

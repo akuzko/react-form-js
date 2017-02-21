@@ -5,6 +5,7 @@ import Form, {
   TextArea,
   Select,
   Checkbox,
+  CheckboxGroup,
   RadioButtonGroup,
   RadioButton
 } from '../../src';
@@ -106,11 +107,33 @@ export default class DemoForm extends Form {
             </div>
           </div>
 
+          <div className="paper horizontal-container center p-20 mb-20">
+            <div className="flex-item two mr-20">
+              <Source code={`
+                <div className="mb-10">Favorite Colors:</div>
+                <CheckboxGroup {...$('colors')} className="mb-20" checkboxClassName="block checkbox mb-20">
+                  <Checkbox value="red" label={<span>Red</span>} />
+                  <Checkbox value="green" label={<span>Green</span>} />
+                  <Checkbox value="blue" label={<span>Blue</span>} className="block checkbox" />
+                </CheckboxGroup>`}
+              />
+            </div>
+            <div className="flex-item">
+              <div className="mb-10">Favorite Colors:</div>
+              <CheckboxGroup {...$('colors')} className="mb-20" checkboxClassName="block checkbox mb-20">
+                <Checkbox value="red" label={<span>Red</span>} />
+                <Checkbox value="green" label={<span>Green</span>} />
+                <Checkbox value="blue" label={<span>Blue</span>} className="block checkbox" />
+              </CheckboxGroup>
+              <button className="btn green" onClick={this.makeInvalid.bind(this, 'colors')}>Validate</button>
+            </div>
+          </div>
+
           <div className="paper horizontal-container center p-20">
             <div className="flex-item two mr-20">
               <Source code={`
                 <div className="mb-10">Favorite Color</div>
-                <RadioButtonGroup className="horizontal-container relative radio-group mb-20" {...$('radio')}>
+                <RadioButtonGroup {...$('radio')} className="horizontal-container relative radio-group mb-20">
                   <RadioButton className="radio mr-20" value="red" label={<span>Red</span>} />
                   <RadioButton className="radio mr-20" value="green" label={<span>Green</span>} />
                   <RadioButton className="radio" value="blue" label={<span>Blue</span>} />
@@ -119,7 +142,7 @@ export default class DemoForm extends Form {
             </div>
             <div className="flex-item">
               <div className="mb-10">Favorite Color:</div>
-              <RadioButtonGroup className="horizontal-container relative radio-group mb-20" {...$('radio')}>
+              <RadioButtonGroup {...$('radio')} className="horizontal-container relative radio-group mb-20">
                 <RadioButton className="radio mr-20" value="red" label={<span>Red</span>} />
                 <RadioButton className="radio mr-20" value="green" label={<span>Green</span>} />
                 <RadioButton className="radio" value="blue" label={<span>Blue</span>} />

@@ -47,7 +47,5 @@ TextField.propTypes = {
 TextField.defaultProps = {
   value: '',
   labelPosition: 'before',
-  className: '',
-  inputClassName: '',
   errorClassName: 'error'
 };

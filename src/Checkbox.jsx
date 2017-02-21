@@ -13,9 +13,13 @@ export default function Checkbox(props) {
     ...rest
   } = props;
 
+  // labelPosition is not placed in defaultProps in order for it to be
+  // overridable in RadioButtonGroup
+  const actualPosition = labelPosition || 'after';
+
   return (
     <label className={className}>
-      {labelPosition === 'before' && label}
+      {actualPosition === 'before' && label}
 
       <input
         type="checkbox"
@@ -26,7 +30,7 @@ export default function Checkbox(props) {
         {...rest}
       />
 
-      {labelPosition === 'after' && label}
+      {actualPosition === 'after' && label}
 
       {error &&
         <div className={errorClassName}>{error}</div>
@@ -36,7 +40,7 @@ export default function Checkbox(props) {
 }
 
 Checkbox.propTypes = {
-  value: PropTypes.bool,
+  value: PropTypes.oneOfType([PropTypes.bool, PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func,
   error: PropTypes.string,
   label: PropTypes.node,
@@ -48,8 +52,5 @@ Checkbox.propTypes = {
 
 Checkbox.defaultProps = {
   value: false,
-  labelPosition: 'after',
-  className: '',
-  inputClassName: '',
   errorClassName: 'error'
 };

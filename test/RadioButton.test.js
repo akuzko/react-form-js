@@ -23,8 +23,8 @@ describe('<RadioButton />', function() {
     it('renders label after input by default', function() {
       const wrapper = shallow(<RadioButton label="Radio" />);
       expect(wrapper.equals(
-        <label className="">
-          <input type="radio" className="" />
+        <label className={undefined}>
+          <input type="radio" className={undefined} />
           Radio
         </label>
       )).toBe(true);
@@ -33,9 +33,9 @@ describe('<RadioButton />', function() {
     it('renders label before input if corresponding labelPosition prop is specified', function() {
       const wrapper = shallow(<RadioButton label="Radio" labelPosition="before" />);
       expect(wrapper.equals(
-        <label className="">
+        <label className={undefined}>
           Radio
-          <input type="radio" className="" />
+          <input type="radio" className={undefined} />
         </label>
       )).toBe(true);
     });

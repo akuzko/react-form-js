@@ -22,7 +22,3 @@ RadioButton.propTypes = {
   inputClassName: PropTypes.string
 };
 
-RadioButton.defaultProps = {
-  className: '',
-  inputClassName: ''
-};

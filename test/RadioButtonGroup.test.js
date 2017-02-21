@@ -55,7 +55,7 @@ describe('<RadioButtonGroup />', function() {
       expect(wrapper.containsMatchingElement(<RadioButton value="bar" label="bar" labelPosition="after" />)).toBe(true);
     });
 
-    it('passes checked property to the mathing RadioButton', function() {
+    it('passes checked property to the matching RadioButton', function() {
       const wrapper = shallow(
         <RadioButtonGroup name="foo" value="bar">
           <RadioButton value="foo" label="foo" />

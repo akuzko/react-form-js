@@ -51,7 +51,7 @@ Select.propTypes = {
     PropTypes.shape({
       value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       label: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    })])).isRequired,
+    })])),
   includeBlank: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   label: PropTypes.node,
   labelPosition: PropTypes.oneOf(['before', 'after']),
@@ -66,7 +66,5 @@ Select.defaultProps = {
   options: [],
   includeBlank: false,
   labelPosition: 'before',
-  className: '',
-  inputClassName: '',
   errorClassName: 'error'
 };

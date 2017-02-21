@@ -172,7 +172,7 @@ Wraps `<select />` HTML tag.
       ])
     })
   ])
-).isRequired</code></pre>
+)</code></pre>
       </td>
       <td>
         options to be rendered within internal select tag. If array of strings
@@ -271,10 +271,77 @@ Wraps `<input type="checkbox" />` HTML tag.
   </tbody>
 </table>
 
+#### `CheckboxGroup`
+
+Wraper around multiple `Checkbox` components. Has to include `Checkbox`es
+as **direct children**. This component is designed for inputs whose value represents
+a collection of items that can be included in collection via checkboxes. For
+example, if your input has value of `['foo', 'bar']`, `Checkboxes` underneath
+`CheckboxGroup` input with values of `'foo'` and `'bar'` will be checked. All
+other checkboxes will be unchecked.
+
+<table>
+  <tbody>
+    <tr>
+      <th>Prop Name</th>
+      <th>Spec</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>labelPosition</td>
+      <td><code>PropTypes.oneOf(['before', 'after'])</code><br/>Defaults to <code>'after'</code></td>
+      <td>
+        Passed to nested <code>Checkbox</code> components.
+        Specifies whether label should be rendered before or after input element.
+        <strong>Can be overriden</strong> by <code>Checkbox</code>.
+      </td>
+    </tr>
+    <tr>
+      <td>className</td>
+      <td><code>PropTypes.string</code></td>
+      <td>className for the root component element.</td>
+    </tr>
+    <tr>
+      <td>checkboxClassName</td>
+      <td><code>PropTypes.string</code></td>
+      <td>
+        Passed to nested <code>Checkbox</code> components as <strong>className</strong> property.
+        <strong>Can be overriden</strong> by <code>Checkbox</code>.
+      </td>
+    </tr>
+    <tr>
+      <td>inputClassName</td>
+      <td><code>PropTypes.string</code></td>
+      <td>
+        Passed to nested <code>Checkbox</code> components property.
+        <strong>Can be overriden</strong> by <code>Checkbox</code>.
+      </td>
+    </tr>
+    <tr>
+      <td>errorClassname</td>
+      <td><code>PropTypes.string</code>Defaults to <code>'error'</code></td>
+      <td>className for internal error element (div), which is rendered if error is present.</td>
+    </tr>
+    <tr>
+      <td>children</td>
+      <td><code>PropTypes.node</code></td>
+      <td>
+        Actual checkboxes should be passed as children as <code>Checkbox</code> components.
+        All other (non-Checkbox) elements are rendered untouched.
+      </td>
+    </tr>
+    <tr>
+      <td><code>...rest</code></td>
+      <td></td>
+      <td>the rest of props is delegated to each of nested <code>Checkbox</code> component (and only to them).</td>
+    </tr>
+  </tbody>
+</table>
+
 #### `RadioButtonGroup`
 
 Wraper around multiple `RadioButton` components. Has to include `RadioButton`s
-as **direct children**, and supplied `name` property to them.
+as **direct children**, and supplies `name` property to them.
 
 <table>
   <tbody>
@@ -322,8 +389,8 @@ as **direct children**, and supplied `name` property to them.
       <td>children</td>
       <td><code>PropTypes.node</code></td>
       <td>
-        Actual radio buttons should be passed in children as <code>RadioButton</code> elements.
-        All other (non-radio-button elements) are rendered untouched.
+        Actual radio buttons should be passed as children as <code>RadioButton</code> components.
+        All other (non-RadioButton) elements are rendered untouched.
       </td>
     </tr>
     <tr>
