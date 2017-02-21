@@ -1,6 +1,6 @@
 {
   "name": "react-form-js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "HTML input bindings for react-form-base",
   "main": "./lib/index.js",
   "scripts": {
@@ -18,6 +18,12 @@
   "files": [
     "lib",
     "src"
+  ],
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-components",
+    "form"
   ],
   "author": "Artem Kuzko <a.kuzko@gmail.com> (https://github.com/akuzko)",
   "license": "MIT",
