@@ -23,6 +23,7 @@ import Form, {
   TextArea,
   Select,
   Checkbox,
+  CheckboxGroup,
   RadioButtonGroup,
   RadioButton
 } from 'react-form-js';
@@ -36,6 +37,11 @@ export default class MyForm extends Form {
         <TextField {...this.$('fullName')} label="Full Name" />
         <TextArea {...this.$('description')} label="Description" />
         <Select {...this.$('age')} options={ages} includeBlank="Select..." />
+        <CheckboxGroup {...this.$('favoriteColors')}>
+          <Checkbox value="red" label="Red" />
+          <Checkbox value="green" label="Green" />
+          <Checkbox value="blue" label="Blue" />
+        </CheckboxGroup>
         <RadioButtonGroup {...this.$('sex')}>
           <RadioButton value="male" label="Male" />
           <RadioButton value="female" label="Female" />
@@ -87,7 +93,7 @@ Wraps `<input type="text" />` HTML tag.
       <td>className for internal input element.</td>
     </tr>
     <tr>
-      <td>errorClassname</td>
+      <td>errorClassName</td>
       <td><code>PropTypes.string</code>Defaults to <code>'error'</code></td>
       <td>className for internal error element (div), which is rendered if error is present.</td>
     </tr>
@@ -131,7 +137,7 @@ Wraps `<textarea />` HTML tag.
       <td>className for internal textarea element</td>
     </tr>
     <tr>
-      <td>errorClassname</td>
+      <td>errorClassName</td>
       <td><code>PropTypes.string</code>Defaults to <code>'error'</code></td>
       <td>className for internal error element (div), which is rendered if error is present.</td>
     </tr>
@@ -215,7 +221,7 @@ Wraps `<select />` HTML tag.
       <td>className for internal select element.</td>
     </tr>
     <tr>
-      <td>errorClassname</td>
+      <td>errorClassName</td>
       <td><code>PropTypes.string</code>Defaults to <code>'error'</code></td>
       <td>className for internal error element (div), which is rendered if error is present.</td>
     </tr>
@@ -259,7 +265,7 @@ Wraps `<input type="checkbox" />` HTML tag.
       <td>className for internal input element.</td>
     </tr>
     <tr>
-      <td>errorClassname</td>
+      <td>errorClassName</td>
       <td><code>PropTypes.string</code>Defaults to <code>'error'</code></td>
       <td>className for internal error element (div), which is rendered if error is present.</td>
     </tr>
@@ -273,7 +279,7 @@ Wraps `<input type="checkbox" />` HTML tag.
 
 #### `CheckboxGroup`
 
-Wraper around multiple `Checkbox` components. Has to include `Checkbox`es
+Wraper around multiple `Checkbox` components. Has to include `Checkbox`'es
 as **direct children**. This component is designed for inputs whose value represents
 a collection of items that can be included in collection via checkboxes. For
 example, if your input has value of `['foo', 'bar']`, `Checkboxes` underneath
@@ -318,7 +324,7 @@ other checkboxes will be unchecked.
       </td>
     </tr>
     <tr>
-      <td>errorClassname</td>
+      <td>errorClassName</td>
       <td><code>PropTypes.string</code>Defaults to <code>'error'</code></td>
       <td>className for internal error element (div), which is rendered if error is present.</td>
     </tr>
@@ -381,7 +387,7 @@ as **direct children**, and supplies `name` property to them.
       </td>
     </tr>
     <tr>
-      <td>errorClassname</td>
+      <td>errorClassName</td>
       <td><code>PropTypes.string</code>Defaults to <code>'error'</code></td>
       <td>className for internal error element (div), which is rendered if error is present.</td>
     </tr>
