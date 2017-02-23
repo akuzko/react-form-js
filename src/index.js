@@ -1,4 +1,5 @@
 export default from 'react-form-base';
+export { bindState } from 'react-form-base';
 
 export Checkbox from './Checkbox';
 export CheckboxGroup from './CheckboxGroup';
