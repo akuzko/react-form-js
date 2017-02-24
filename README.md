@@ -12,8 +12,9 @@ npm install --save react-form-js
 ## Usage
 
 For a more detailed information on core functionality of `react-form-base`, take a
-look at [it's demo](https://akuzko.github.io/react-form-base/). To see a sample
-usage of this package components, you may want to look at [small demo](https://akuzko.github.io/react-form-js/).
+look at [react-form-base demo](https://akuzko.github.io/react-form-base/). To see
+a sample usage of this package components, you may want to look at
+[react-form-js components demo](https://akuzko.github.io/react-form-js/).
 
 ### Example
 
