@@ -3,6 +3,9 @@ Input Bindings for React Form Base
 
 HTML input bindings for [react-form-base](https://github.com/akuzko/react-form-base).
 
+[![build status](https://img.shields.io/travis/akuzko/react-form-js/master.svg?style=flat-square)](https://travis-ci.org/akuzko/react-form-js)
+[![npm version](https://img.shields.io/npm/v/react-form-js.svg?style=flat-square)](https://www.npmjs.com/package/react-form-js)
+
 ## Installation
 
 ```

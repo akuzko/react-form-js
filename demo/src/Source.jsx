@@ -1,3 +1,4 @@
+/*global Prism*/
 import React, { PropTypes, PureComponent } from 'react';
 import dedent from 'dedent-js';
 
